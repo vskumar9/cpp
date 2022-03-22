@@ -1,0 +1,290 @@
+# single inh--------------------------------------------------------------------------------------------------------------------------------------
+
+#include<iostream>
+using namespace std;
+class inh
+{
+	public:
+	int a,b,c,d;
+	char n;
+	public:
+	void get_data()
+	{
+		cout<<"enter the a value: ";
+		cin>>a;
+		cout<<"enter the a value: ";
+		cin>>b;
+		cout<<"enter the a value: ";
+		cin>>c;
+		cout<<"enter the a value: ";
+		cin>>d;
+		cout<<"Enter the operater :";
+		cin>>n;
+	}
+};
+class inh1 : public inh
+{
+	public:
+	 void oper()
+	 {
+		 switch(n)
+		 {
+			 case '+':
+			 cout<<"The sum of the numbers: "<<a+b+c+d;
+			 break;
+		 }
+	 }
+			 
+	
+};
+int main()
+{
+	inh1 h1;
+	h1.get_data();
+	h1.oper();
+	return 0;
+}
+
+
+
+
+#multiple inh-----------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+#include<iostream>
+using namespace std;
+class inh
+{
+	public:
+	int roll;
+	string name, department;
+};
+class inh1 : public inh
+{
+	public:
+	void sd()
+	{
+		cout<<"Enter the student roll number : ";
+		cin>>roll;
+		cout<<"Enter the name of the student : ";
+		cin>>name;
+		cout<<"Enter the student branch : ";
+		cin>>department;
+		
+	}
+	void dis()
+	{
+		cout<<"Enter the student roll number : "<<roll<<endl;
+		cout<<"Enter the name of the student : "<<name<<endl;
+		cout<<"Enter the student branch : "<<department<<endl;}
+	};
+class inh2 : public inh
+{
+	public:
+	 void em()
+	 {
+        cout<<"Enter the employee roll number : ";
+		cin>>roll;
+		cout<<"Enter the name of the employee : ";
+		cin>>name;
+		cout<<"Enter the employee department : ";
+		cin>>department;
+		
+	}
+	void display()
+	{
+		 cout<<"Enter the employee roll number : "<<roll<<endl;
+		 cout<<"Enter the name of the employee : "<<name<<endl;
+		 cout<<"Enter the employee branch : "<<department<<endl;}
+};
+int main()
+{ 
+	inh1 h1;
+	inh2 h2;
+	h1.sd();
+	h2.em();
+	h1.dis();
+	h2.display();
+	return 0;
+}
+
+
+
+
+
+
+
+#multilevel----------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+#include<iostream>
+using namespace std;
+class inh
+{
+	public:
+	 int a;
+	 float b;
+};
+class inh1 : public inh
+{
+	public:
+	void get_data(){
+	cout<<"Enter the a value";
+	cin>>a;
+	cout<<"Enter the b value";
+	cin>>b;
+}
+};
+class inh2 : public inh1
+{
+	public:
+	void add()
+	{
+	cout<<"sum of the a and b values";
+	cout<<a+b;
+}};
+int main()
+{
+	inh2 h1;
+	h1.get_data();
+	h1.add();
+	return 0;
+}
+
+ 
+
+
+
+
+
+#hierar inh---------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+#include<iostream>
+using namespace std;
+class base
+{
+	protected:
+	int age;
+	string name,gender,address;
+};
+class der1 : public base
+{
+	public:
+	int pu;
+	 void get_data()
+	 {
+		 cout<<"Enter the name of the student";
+		 cin>>name;
+		 cout<<"Enter the student gender male/female";
+		 cin>>gender;
+		 cout<<"Enter the student age: ";
+		 cin>>age;
+		 cout<<"Enter the student address : ";
+		 cin>>address;
+		 cout<<"pursuring year";
+		 cin>>pu;
+	 }
+	 void out()
+	 {
+		 cout<<"Enter the name of the student"<<name<<endl;
+		 cout<<"Enter the student gender male/female"<<gender<<endl;
+		 cout<<"Enter the student age: "<<age<<endl;
+		 cout<<"Enter the student address : "<<address<<endl;
+		 cout<<"pursuring year"<<pu<<endl;
+	 }
+ };
+ class der2 : public base
+{
+	public:
+	int salary;
+	 void get_dat()
+	 {
+		 cout<<"Enter the name of the employee";
+		 cin>>name;
+		 cout<<"Enter the employee gender male/female";
+		 cin>>gender;
+		 cout<<"Enter the employee age: ";
+		 cin>>age;
+		 cout<<"Enter the employee address : ";
+		 cin>>address;
+		 cout<<"Enter the employee salary : ";
+		 cin>>salary;
+	 }
+	 void outem()
+	 {
+		  cout<<"Enter the name of the employee"<<name<<endl;	
+	      cout<<"Enter the employee gender male/female"	<<gender<<endl;
+		 cout<<"Enter the employee age: "<<age<<endl;
+		 cout<<"Enter the employee address : "<<address<<endl;
+		 cout<<"Enter the employee salary : "<<salary<<endl;
+	 }
+ };
+int main()
+{
+	der1 d1;
+	der2 d2;
+	d1.get_data();
+	d2.get_dat();
+	d1.out();
+	d2.outem();
+}
+
+
+##hybrid inh----------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+#include<iostream>
+using namespace std;
+class a
+{
+	public:
+	int x;
+};
+class b : public a
+{
+	public:
+	b()
+{
+	x=10;
+}};
+class c
+{
+	public:
+	 int y;
+	 c()
+	 {
+		 y=4;
+	 }};
+class d : public b,public c
+{
+	public:
+	void sum()
+	{
+		cout<<x+y;
+	}};
+int main()
+{
+	d g;
+	g.sum();
+	return 0;
+}
+	
+
+
+
